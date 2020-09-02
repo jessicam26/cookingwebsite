@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>MissPepperpotsCookingAcademy</title>
+  <script src="jquery.min.js"></script>
+   <script src="jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <style>
+ 
+body {
+          background-color:#80aaff;
+       }
+h1{
+   font-family:"Comic Sans MS";
+  
+   color:#CC00CC;
+}	   
+
+
+
+
+</style>
+
+<script>
+$(document).ready(function() {
+  $('#photos img').draggable({
+    revert : "invalid",
+  	start : function (event, ui) {
+      ui.helper.css('transform', 'rotate(5deg) scale(1.5)');
+    },
+    stop : function (event, ui) {
+      ui.helper.css('transform', 'rotate(0deg) scale(1)');
+    },
+    zIndex : 100
+  }); // end draggable
+	var addedingredants = 0;
+  $('#bowl').droppable({
+    activeClass : 'highlight',
+  	drop : function (event, ui) {
+		accept : '#sugar img'
+		accept : '#butter img'
+		accept : '#vanilla img'
+		accept : '#flour img'
+		accept : '#bakingsoda img'
+		accept : '#bakingpowder img'
+		accept : '#eggs img'
+  		ui.helper.hide('puff');
+		addedingredants += 1;  
+		if(addedingredants === 7) {
+			alert('Good Job, you get the blue ribbon!!');
+		}
+  	}
+  }); // end droppable
+}); // end ready
+</script>
+</head>
+<body>
+<div class="content">
+<div class="main">
+<div style="float: left;">
+<h1><center>Miss PepperPots Recipe Game</center></h1>
+
+ <div id = "Recipe">
+           <ul>
+		      <li class="caption2">Miss PepperPot Marvelous Sugar Cookies Recipe
+			 </li>
+			  <li>Item number 1 that enters the bowl is:SUGAR!</li>
+			  <li>Item number 2 that enters the bowl is: BUTTER!</li>
+              <li>Item number 3 that enters the bowl is:  VANILLA!</li>
+			  <li>Item number 4 that enters the bowl is: FLOUR!</li>
+              <li>Item number 5 that enters the bowl is: BAKING SODA!</li>
+              <li>Item number 6 that enters the bowl is: BAKING POWDER!</li>
+              <li>Item number 7 that enters the bowl is: EGGS</li>		  
+
+            </ul>
+			</div>
+
+		
+ 
+		
+
+            <div id="photos">
+			<img src="images/flour.jpg" width="100" height=100">
+					  <img src="images/sugar.jpg" width="100" height= "100">
+					  <img src="images/butter.jpg" width="100" height= "100">
+					  <img src="images/eggs.jpg" width="100"  height= "100">
+					  <img src="images/vanilla.jpg" width="100" height = "100">
+					  <img src="images/bakingsoda.jpg" width="100" height="100">
+					  <img src="images/bakingpowder.jpg" width="100" height="100">
+					  
+                   </div>
+				   <img src ="images/bowl.gif" width="250" height="250" id="bowl">
+				   <p></p>
+			</div>
+			
+         
+		
+		 
+				   
+        
+</body>		
+  </html>
+  
+  
+  
